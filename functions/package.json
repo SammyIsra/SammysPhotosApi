@@ -1,5 +1,6 @@
 {
-  "name": "functions",
+  "name": "sammys-photos-api",
+  "version": "1.0.0",
   "scripts": {
     "build": "tsc",
     "serve": "npm run build && firebase serve --only functions",
@@ -22,5 +23,9 @@
   "engines": {
     "node": "8"
   },
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SammyIsra/SammysPhotosApi"
+  }
 }
