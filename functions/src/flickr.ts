@@ -63,8 +63,19 @@ function newGetPhotos(query: IQuery) {
       }
 
       //Return the pictures, all the data
-      return query.limitTo ? photo.slice(0, query.limitTo) : photo;
+      return (query.limitTo ? photo.slice(0, query.limitTo) : photo).map(
+        ensureFieldType
+      );
     });
+}
+
+function ensureFieldType<T extends any>(photo: T): T {
+  return {
+    ...photo,
+    datetakengranularity: String(photo.datetakengranularity),
+    height_c: String(photo.height_c),
+    width_c: String(photo.height_c)
+  };
 }
 
 /**
