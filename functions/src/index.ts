@@ -1,6 +1,6 @@
-import * as functions from 'firebase-functions';
-import { Response, Request } from 'firebase-functions';
-import { getFlickrPhotosMethod } from './flickr';
+import * as functions from "firebase-functions";
+import { Response, Request } from "firebase-functions";
+import { getFlickrPhotosMethod } from "./flickr";
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
@@ -10,10 +10,12 @@ import { getFlickrPhotosMethod } from './flickr';
 // });
 
 function helloWorldMethod(request: Request, response: Response): void {
-  console.log('test me here');
+  console.log("test me here");
   response.send("Hello from World!!");
 }
 
+/** Simply a demo request */
 export const helloWorld = functions.https.onRequest(helloWorldMethod);
 
+/** Request pictures from Flickr */
 export const getFlickPhotos = functions.https.onRequest(getFlickrPhotosMethod);

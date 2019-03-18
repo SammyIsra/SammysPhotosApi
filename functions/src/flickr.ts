@@ -16,6 +16,10 @@ export function getFlickrPhotosMethod(
     .catch(err => response.send(err));
 }
 
+/**
+ * Fetch and manage the photos from Flickr
+ * @param query
+ */
 function newGetPhotos(query: IQuery) {
   console.log("config:", config());
 
@@ -63,6 +67,9 @@ function newGetPhotos(query: IQuery) {
     });
 }
 
+/**
+ * Query object received from caller
+ */
 export interface IQuery {
   limitTo: number;
   sortBy: "views" | "date";
